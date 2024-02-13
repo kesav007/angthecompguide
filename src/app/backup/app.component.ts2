@@ -1,0 +1,24 @@
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ServerModel } from './models/server-model';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  serverElements: ServerModel[] = [];
+  blueServerElements: ServerModel[] = [];
+
+  onServerCreated(event: ServerModel){
+    console.log(event);
+    this.serverElements.push(event);
+  }
+
+  onServerContentCreated(event: ServerModel) {    
+    console.log(event);
+    this.serverElements.push(event);
+  }
+
+}
+

@@ -1,0 +1,11 @@
+<div class="container">
+  <app-server-element (serverCreated)="onServerCreated($event)" (bpCreated)="onServerContentCreated($event)"></app-server-element>  
+  <hr>
+  <app-cockpit *ngFor="let serverElm of serverElements" [serverElm]="serverElm">
+    <p>
+      <strong *ngIf="serverElm.type === 'server'" style="color: red">{{ serverElm.content }}</strong>
+      <em *ngIf="serverElm.type === 'blueprint'">{{ serverElm.content }}</em>
+    </p>
+
+  </app-cockpit>
+  </div>

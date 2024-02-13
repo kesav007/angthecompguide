@@ -1,9 +1,15 @@
-<app-header></app-header>
+<app-header (myTabEventEmitter)="onTabSelection($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="selectedTab === 'receipes'"></app-recipes>
+      <app-shopping-list *ngIf="selectedTab === 'shoppingList'"></app-shopping-list>
+
+      <!--
+      <app-cockpit (serverCreated)="onServerAdded($event)"
+      (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+      <app-server-element></app-server-element>
+      -->
     </div>
   </div>
 </div>

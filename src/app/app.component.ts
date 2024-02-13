@@ -7,16 +7,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angthecompguide';
-
   serverName: string = '';
   outputserver: string = 'No server was created';
   servercreated: boolean = false;
+  selectedTab: string = 'receipes';
+  serverElements: any[] = [];
 
   onAddServer() {
     this.servercreated = true;
     this.outputserver = 'server was created ' + this.serverName;
   }
-  onInput(event: Event){
+  onInput(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onServerAdded(event: Event) {
+    console.log(event);
+  }
+
+  onBlueprintAdded(event: string) {
+    console.log(event);
+  }
+
+  onTabSelection(event: string){
+    console.log(event);
+    this.selectedTab = event;
   }
 }
